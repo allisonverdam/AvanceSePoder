@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://prefabs/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prefabs/Circles.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sky.png" type="Texture" id=3]
+[ext_resource path="res://prefabs/ColorSwitch.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefabs/Bars.tscn" type="PackedScene" id=5]
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 70, 230 )
+jump_force = 150
+gravity = 400
+
+[node name="Circles" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 70, 80 )
+
+[node name="Parallax" type="ParallaxBackground" parent="."]
+
+editor/display_folded = true
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax"]
+
+motion/scale = Vector2( 0, 1 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 0, 512 )
+
+[node name="sky" type="Sprite" parent="Parallax/ParallaxLayer"]
+
+transform/pos = Vector2( 70, 150 )
+texture = ExtResource( 3 )
+
+[node name="ColorSwitch" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 70, -130 )
+
+[node name="ColorSwitch1" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 70, -330 )
+
+[node name="ColorSwitch2" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 70, -540 )
+
+[node name="ColorSwitch3" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 70, -720 )
+
+[node name="ColorSwitch4" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 70, -910 )
+
+[node name="Circles 2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 70, -230 )
+transform/scale = Vector2( 0.2325, 0.2325 )
+rot_speed = 80
+
+[node name="Circles 4" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 70, -420 )
+rot_speed = 100
+
+[node name="Circles 5" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 70, -620 )
+transform/scale = Vector2( 0.231251, 0.231251 )
+rot_speed = 80
+
+[node name="Circles 6" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 70, -820 )
+rot_speed = 200
+
+[node name="Bars" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 42.6, -972.4 )
+transform/scale = Vector2( 0.17, 0.17 )
+
+
